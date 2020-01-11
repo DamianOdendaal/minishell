@@ -14,12 +14,12 @@ NAME = minishell
 LIBFT_DIR = libft
 LIBFT_CFILES = libft/%.c
 SRCS_D = srcs
-OBJS_D = objs
+OBJS_D = objs							#remember to make a objs dir for the object files to go to
 LIBFT_LIB = -L $(LIBFT_DIR) -lft
 HEADERS = -I./includes -I./$(LIBFT_DIR)
 CFLAGS = -Wall -Werror -Wextra $(HEADERS)
 CC = gcc -g
-SOURCES = 
+SOURCES = main.c arguments.c \
 
 OBJECTS = $(addprefix $(OBJS_D)/,$(SOURCES:.c=.o))
 
