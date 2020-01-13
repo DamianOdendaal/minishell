@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fork.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/10 14:56:01 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/13 11:36:13 by dodendaa         ###   ########.fr       */
+/*   Created: 2020/01/13 11:33:52 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/01/13 11:35:29 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-// read about the readline header
-
 #include "../includes/minishell.h"
 
+// here you are going to use fork to run stuff like ls that you would use execve
 
-int main(int ac, char **av)
-{
-    if (ac == 1)
-        // print a new line only
-
-    
-
-    // call a function that will start the C.L. interpertor 
-    // have error handling for if the function call isnt successful
-    return (0);
-}
+read on how to use both of the abovementioned functions

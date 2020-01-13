@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: dodendaa <dodendaa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/10 14:56:05 by marvin            #+#    #+#              #
-#    Updated: 2020/01/10 14:56:05 by marvin           ###   ########.fr        #
+#    Updated: 2020/01/13 11:33:30 by dodendaa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = minishell
 LIBFT_DIR = libft
 LIBFT_CFILES = libft/%.c
 SRCS_D = srcs
-OBJS_D = objs							#remember to make a objs dir for the object files to go to
+OBJS_D = objs
 LIBFT_LIB = -L $(LIBFT_DIR) -lft
 HEADERS = -I./includes -I./$(LIBFT_DIR)
 CFLAGS = -Wall -Werror -Wextra $(HEADERS)
