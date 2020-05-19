@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dodendaa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 16:20:19 by dodendaa          #+#    #+#             */
-/*   Updated: 2019/06/24 09:15:29 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/07 20:24:33 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strcat(char *s1, const char *s2)
 
 	j = 0;
 	i = j;
-	while (s1[i] != '\0')
+	while (s1[i])
 		i++;
-	while (s2[j] != '\0')
+	while (s2[j])
 	{
 		s1[i + j] = s2[j];
 		j++;

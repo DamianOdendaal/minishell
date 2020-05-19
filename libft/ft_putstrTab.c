@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_putstrTab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 12:18:31 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/18 12:11:35 by dodendaa         ###   ########.fr       */
+/*   Created: 2020/05/07 19:51:20 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/05/07 19:52:23 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void    ft_putstrTab(char *string)
 {
-	if (alst && (*alst) && del)
-	{
-			ft_lstdel(&(*alst)->next, del);
-			del((*alst)->content, (*alst)->content_size);
-			free((*alst));
-	}
-	return ;
+    ft_putstr(string);
+    ft_putchar('\t');
 }
