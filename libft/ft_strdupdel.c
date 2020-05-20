@@ -1,14 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fork.c                                             :+:      :+:    :+:   */
+/*   ft_strdupdel.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/13 11:33:52 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/20 19:47:36 by dodendaa         ###   ########.fr       */
+/*   Created: 2020/05/20 20:01:52 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/05/20 20:03:07 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "libft.h"
 
+char	*ft_strdupdel(char *str)
+{
+	char	*tmp;
+
+	tmp = ft_strdup(str);
+	ft_strdel(&str);
+	return (tmp);
+}

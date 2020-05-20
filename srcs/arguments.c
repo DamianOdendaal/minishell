@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   arguments.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:11 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/10 14:56:11 by marvin           ###   ########.fr       */
+/*   Updated: 2020/05/20 19:44:24 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-// function to split the argument given into seperate words(2d array)
 
-char    **argument_split(char *arg)
+char    **argument_split(char *arg, char delim)
 {
-    char **ret_val = ft_strsplit(arg);
-    // remember to free
+
+    // come back and see do we split by the : or something else
+
+    char **ret_val = ft_strsplit(arg, delim);
     return (ret_val);
 }
 
-// function to check if a specific argument is present in an array
 
 int     argument_position(char **arg, char *to_find)        
 {
@@ -31,6 +31,8 @@ int     argument_position(char **arg, char *to_find)
 
     index = -1;
     array_length = 0;
+    tmp = 0;
+    
 
     while (arg[tmp])            // test to see if the array lenght is fine
         tmp++;

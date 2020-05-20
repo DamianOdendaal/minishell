@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dodendaa <dodendaa@student.42.fr>          +#+  +:+       +#+         #
+#    By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/10 14:56:05 by marvin            #+#    #+#              #
-#    Updated: 2020/01/13 11:33:30 by dodendaa         ###   ########.fr        #
+#    Updated: 2020/05/20 19:45:30 by dodendaa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ LIBFT_LIB = -L $(LIBFT_DIR) -lft
 HEADERS = -I./includes -I./$(LIBFT_DIR)
 CFLAGS = -Wall -Werror -Wextra $(HEADERS)
 CC = gcc -g
-SOURCES = main.c arguments.c \
+SOURCES = main.c arguments.c prompt.c environment.c fork.c\
 
 OBJECTS = $(addprefix $(OBJS_D)/,$(SOURCES:.c=.o))
 

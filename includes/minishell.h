@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/10 14:56:19 by marvin           ###   ########.fr       */
+/*   Updated: 2020/05/20 20:11:29 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,22 @@
 # include <errno.h>
 # include "../libft/libft.h"
 
+
+# define DIR_NOTEXIST	("No such file or directory.")
+# define DIR_NOTDIR		("Error opening directory.")
+# define DIR_NOPERM		("Permission denied.")
+
 // READ THE MAN PAGES AND SEE WHICH ADDITIONAL HEADERS THAT NEED TO BE ADDED 
 
-// CREATE APPROPTIATE STRUCTURES 
 
 // FUNCTIONS 
 
-int     main(int ac, char **av);
-char    **argument_split(char *arg);
-int     argument_position(char **arg, char *to_find);
+char            **argument_split(char *arg, char delim);
+int             argument_position(char **arg, char *to_find);
+void	        print_env(char **env);
+void            store_env(char **env, char **our_env);
+size_t	        env_len(char **env);
+
+
 
 #endif
