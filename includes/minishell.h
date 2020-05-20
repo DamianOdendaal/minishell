@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/20 20:11:29 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/20 21:25:35 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 // READ THE MAN PAGES AND SEE WHICH ADDITIONAL HEADERS THAT NEED TO BE ADDED 
 
 
-// FUNCTIONS 
+char            **global_env; 
 
 char            **argument_split(char *arg, char delim);
 int             argument_position(char **arg, char *to_find);

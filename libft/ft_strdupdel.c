@@ -6,17 +6,17 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 20:01:52 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/20 20:03:07 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/20 21:11:22 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdupdel(char *str)
+char	*ft_strdupdel(char **str)
 {
 	char	*tmp;
 
-	tmp = ft_strdup(str);
-	ft_strdel(&str);
+	tmp = ft_strdup(*str);
+	ft_strdel(str);
 	return (tmp);
 }

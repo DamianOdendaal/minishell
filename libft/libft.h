@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 13:31:08 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/20 20:05:53 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/20 21:11:28 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef  void (*t_iter_func)(t_list *node);
 typedef  void (*t_iterdata_func)(t_list *node, void *data);
 
 
-char				*ft_strdupdel(char *str);
+char				*ft_strdupdel(char **str);
 void				ft_lstiter_data(t_list *lst, void *data , t_iterdata_func f);
 int					ft_charcasecmp(const char char1, const char char2);
 void    			ft_putstrTab(char *string);
