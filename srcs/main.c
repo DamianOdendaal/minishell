@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:01 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/20 22:07:09 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/20 23:02:39 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int main(int ac, char **av, char **env)
     // store_env(env, test);
     // print_env(test);
     // free(test);
-    char str[] = "HOME";
-    char str2[] = "HOME=THISISATEST";
+    char *str = ft_strdup("HOME");
+    char *str2 = ft_strdup("HOME=THISISATEST");
 
-    char *theTruth;
 
-    theTruth = ft_strstr(str, str2);
-    ft_putstr(theTruth);
+    int test = ft_look_till(str2, str, '=');
+    ft_putnbr(test);
+    ft_putchar('\n');
 
     return (0);
 }
