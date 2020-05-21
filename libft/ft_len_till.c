@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_len_till.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 13:27:09 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/21 22:41:14 by dodendaa         ###   ########.fr       */
+/*   Created: 2020/05/21 22:21:03 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/05/21 22:24:54 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+size_t     ft_len_till(char *search_me, char stop_here)
 {
-	unsigned int i;
+    size_t index;
 
-	i = 0;
-	while (src[i] != '\0' && (i < n))
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+    index = 0;
+    while (search_me[index])
+    {
+        if (search_me[index] == stop_here)
+            break;
+        index++;
+    }
+    return (index);
 }

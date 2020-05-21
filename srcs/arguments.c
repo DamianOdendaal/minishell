@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:11 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/21 20:55:42 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/21 21:25:33 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char    **argument_split(char *arg, char delim)
     char **ret_val;
     
     ret_val = ft_strsplit(arg, delim);
-    // free(arg);
     return (ret_val);
 }
 
@@ -34,7 +33,7 @@ int     argument_position(char **arg, char *to_find)
     tmp = 0;
     
 
-    while (arg[tmp])            // test to see if the array lenght is fine
+    while (arg[tmp])            
         tmp++;
     array_length = tmp;
 

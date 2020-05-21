@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 19:41:31 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/21 21:13:01 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/21 21:51:57 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,13 @@ size_t		env_len(char **env)
 void  store_env(char **env, char **our_env)
 {
     int		index;
-	index = -1;
+	index = 0;
 
-	while (env[++index])
+	while (env[index])
+    {
 		our_env[index] = env[index];
+        index++;
+    }
     our_env[index] = NULL;
 }
 
@@ -64,10 +67,14 @@ void  store_env(char **env, char **our_env)
 **      string on success and NULL on failure
 */
 
-
+#include <stdio.h>
 char     *inside_env(char **env, char *find_me)
 {
-    if (ft_look_till(env ,find_me, '=') != TRUE)
-        return (DODO);
+    int test = ft_look_till(env ,find_me, '=');
+    // if (ft_look_till(env ,find_me, '=') != TRUE)
+    //     return (DODO);
+    // return (find_me);
+    printf("%d\n", test);
     return (find_me);
+
 }

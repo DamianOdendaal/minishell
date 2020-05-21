@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 13:31:08 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/21 19:41:24 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/21 22:36:26 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ typedef  void (*t_iter_func)(t_list *node);
 typedef  void (*t_iterdata_func)(t_list *node, void *data);
 
 
+size_t     			ft_len_till(char *search_me, char stop_here);
+char    			*ft_copy_till(char *search_me, char stop_here);
 int        			ft_look_till(char **search_me, char *compare_me,  char stop_here);
 char				*ft_strdupdel(char **str);
 void				ft_lstiter_data(t_list *lst, void *data , t_iterdata_func f);

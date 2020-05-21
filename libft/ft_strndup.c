@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dodendaa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 11:06:36 by dodendaa          #+#    #+#             */
-/*   Updated: 2019/06/24 11:33:59 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/21 22:36:35 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strndup(const char *str, size_t n)
 	i = ft_strlen(str);
 	new = NULL;
 	if (i == 0)
-		return (ft_strdup(""));
+		return (NULL);
 	else if (!(new = ft_strnew(n)))
 		return (NULL);
 	i = -1;

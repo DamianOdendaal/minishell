@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/21 21:16:36 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/21 22:03:46 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <dirent.h>
+# include <stdio.h>
 # include <sys/stat.h>
 # include <sys/types.h>
 # include <grp.h>
@@ -27,9 +28,8 @@
 # define DIR_NOTEXIST	("No such file or directory.")
 # define DIR_NOTDIR		("Error opening directory.")
 # define DIR_NOPERM		("Permission denied.")
-# define DODO           ("BEBETTER.")
+# define DODO           ("")
 
-// READ THE MAN PAGES AND SEE WHICH ADDITIONAL HEADERS THAT NEED TO BE ADDED 
 
 
 char            **global_env; 
