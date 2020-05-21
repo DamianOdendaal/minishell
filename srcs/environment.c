@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 19:41:31 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/20 22:02:39 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/21 21:13:01 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,28 +60,14 @@ void  store_env(char **env, char **our_env)
 
 /*
 **      A method that will allow us to iterate over our 2d
-**      array and find a given value. We will return a boolean value
-**      0 on failure and 1 on success
+**      array and find a given value. We will return the search
+**      string on success and NULL on failure
 */
 
 
-int     inside_env(char **env, char *find_me)
+char     *inside_env(char **env, char *find_me)
 {
-    int index;
-    
-
-    index = -1;
-
-
-
-    while (env[++index])
-        if (env[index] == find_me)
-            return (1);
-    return (0);
+    if (ft_look_till(env ,find_me, '=') != TRUE)
+        return (DODO);
+    return (find_me);
 }
-
-
-
-// create the following methods , 
-
-// one that iterates over a 2d array and looks for a specific index within it (this is get env)

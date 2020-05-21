@@ -1,0 +1,8 @@
+
+// From the bash man page:
+
+// SHLVL Incremented by one each time an instance of bash is started.
+// As you see, this variable is unrelated to the fact whether it is a login shell or not. It just means that your bash shell has been started by another bash shell. Since we don't know what exactly you are doing to get your shell, I can't say why you have a nested shell invocation, but here are a few common cases:
+// You are starting a new terminal window from the command line
+// You are using some OS feature to start a new terminal window, and this feature is implemented by starting a bash first which then runs the terminal which then in turn runs a new shell
+// You have a recursive bash call in your .bash_profile which is run whenever SHLVL equals 1 (this sounds weird, but I have seen this already twice!)

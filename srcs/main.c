@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:01 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/20 23:02:39 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/21 21:14:30 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,53 @@
 
 int main(int ac, char **av, char **env)
 {
-    // char **test;
+    char **test;
+    char *search_value;
     (void)ac;
     (void)av;
-    (void)env;
-    // size_t length;
+   
+    size_t length;
     
-    // length = env_len(env);
+    length = env_len(env);
 
-    // test = (char **)malloc(sizeof(char *) * (length + 1));
-    // store_env(env, test);
+    char tester[] = "SHELLk";
+
+    test = (char **)malloc(sizeof(char *) * (length + 1));
+    store_env(env, test);
+    if (!(search_value = inside_env(test, tester)))
+    {
+        ft_putchar('k');
+    }
+  
+    ft_putstr(search_value);
+
+
+    
     // print_env(test);
-    // free(test);
-    char *str = ft_strdup("HOME");
-    char *str2 = ft_strdup("HOME=THISISATEST");
-
-
-    int test = ft_look_till(str2, str, '=');
-    ft_putnbr(test);
-    ft_putchar('\n');
-
+    free(test);
     return (0);
 }
 
 
-// From the bash man page:
 
-// SHLVL Incremented by one each time an instance of bash is started.
-// As you see, this variable is unrelated to the fact whether it is a login shell or not. It just means that your bash shell has been started by another bash shell. Since we don't know what exactly you are doing to get your shell, I can't say why you have a nested shell invocation, but here are a few common cases:
-// You are starting a new terminal window from the command line
-// You are using some OS feature to start a new terminal window, and this feature is implemented by starting a bash first which then runs the terminal which then in turn runs a new shell
-// You have a recursive bash call in your .bash_profile which is run whenever SHLVL equals 1 (this sounds weird, but I have seen this already twice!)
+// int main(int ac, char **av, char **env)
+// {
+//     char **test;
+//     (void)ac;
+//     (void)av;
+//     (void)env;
+   
+//     char str[] = "hello this is a string i wanna split";
+//     char delim = ' ';
+//     test = argument_split(str, delim);
+
+//     int index = 0;
+//     while (test[index] )
+//     {
+//         ft_putstr(test[index]);
+//         index++;
+//     }
+   
+
+//     return (0);
+// }

@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/20 21:25:35 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/21 21:16:36 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define DIR_NOTEXIST	("No such file or directory.")
 # define DIR_NOTDIR		("Error opening directory.")
 # define DIR_NOPERM		("Permission denied.")
+# define DODO           ("BEBETTER.")
 
 // READ THE MAN PAGES AND SEE WHICH ADDITIONAL HEADERS THAT NEED TO BE ADDED 
 
@@ -38,6 +39,8 @@ int             argument_position(char **arg, char *to_find);
 void	        print_env(char **env);
 void            store_env(char **env, char **our_env);
 size_t	        env_len(char **env);
+char            *inside_env(char **env, char *find_me);
+
 
 
 

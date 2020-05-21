@@ -6,32 +6,34 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 22:16:20 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/20 23:03:00 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/21 21:15:38 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int        ft_look_till(char *search_me, char *compare_me,  char stop_here)
+int        ft_look_till(char **search_me, char *compare_me,  char stop_here)
 {
-    int     index;
+    int     array_index;
+    int     string_index;
     char    *return_string;
+    char    **the_strings;
 
-    index = -1;
+    array_index = 0;
+    string_index = 0;
 
     if (!search_me || !compare_me)
         return (FALSE);
-
-    while(search_me[++index])
+    while(search_me[array_index])
     {
-        if (search_me[index] == stop_here)
-            break;
-        return_string[index] = search_me[index];
-
+         the_strings = ft_strsplit(search_me[array_index], stop_here);
+         while (the_strings[string_index])
+         {
+             if (the_strings[string_index] == compare_me)
+                return (TRUE);
+            string_index++;
+         }
+         array_index++;
     }
-    return_string[index] = '\0';
-    if (ft_strcmp(return_string, compare_me) == 0)
-        return (TRUE);
-
     return (FALSE);
 }
