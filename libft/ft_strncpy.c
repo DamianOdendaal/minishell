@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:27:09 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/21 22:41:14 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/23 01:55:15 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,6 @@ char	*ft_strncpy(char *dest, const char *src, size_t n)
 		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
+	dest[i] = '\0';
 	return (dest);
 }

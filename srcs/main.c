@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:01 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/21 22:29:57 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/23 01:51:27 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int ac, char **av, char **env)
     char str1[] = "Hello World!";
     size_t len = ft_len_till(str1, ' ');
     char *str;
-    //  = (char *)malloc(sizeof(char) * len + 1);
+    // str = (char *)malloc(sizeof(char) * len + 1);
     str = ft_copy_till(str1, ' ');
     printf("%s\n", str);
     printf("%ld\n", len);

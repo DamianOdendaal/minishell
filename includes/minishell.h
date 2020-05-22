@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/21 22:03:46 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/22 22:57:38 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@
 # include "../libft/libft.h"
 
 
-# define DIR_NOTEXIST	("No such file or directory.")
-# define DIR_NOTDIR		("Error opening directory.")
-# define DIR_NOPERM		("Permission denied.")
+# define NOTEXIST	("No such file or directory.")
+# define NOTDIR		("Error opening directory.")
+# define NOPERM		("Permission denied.")
 # define DODO           ("")
 
 
