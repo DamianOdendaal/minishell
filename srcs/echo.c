@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_copy_till.c                                     :+:      :+:    :+:   */
+/*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/21 22:17:36 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/23 20:11:37 by dodendaa         ###   ########.fr       */
+/*   Created: 2020/05/24 00:59:38 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/05/24 09:27:47 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/minishell.h"
 
 
 /*
-**      actually duplicate till but you got bamboozled
+**      Echo , the builtin that will echo what you put in back out to the
+**      stdout
 */
 
-char    *ft_copy_till(char *search_me, char stop_here)
+int     ft_echo(char **commander_pedro)
 {
-    size_t len; 
-    char *return_me;
+    size_t length;
 
-    len = ft_len_till(search_me, stop_here);
-    return_me  = (char *)malloc(sizeof(char) * len + 1);
-    ft_strncpy(return_me, search_me, len);
-    return (return_me);
+    length = env_len(commander_pedro);
+    
 }

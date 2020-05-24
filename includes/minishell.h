@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/22 22:57:38 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/23 22:24:53 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ void	        print_env(char **env);
 void            store_env(char **env, char **our_env);
 size_t	        env_len(char **env);
 char            *inside_env(char **env, char *find_me);
+int             ft_find_index(char **search_me, char *compare_me,  char stop_here);
+int             ft_setenv(const char *name, const char *value);
+
 
 
 

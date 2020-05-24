@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 13:31:08 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/21 22:36:26 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/23 22:09:40 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
+
 
 # define TRUE 		1
 # define FALSE 		0

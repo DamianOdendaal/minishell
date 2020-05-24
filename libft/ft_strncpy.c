@@ -6,22 +6,24 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:27:09 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/23 01:55:15 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/23 20:03:40 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	unsigned int i;
+	size_t i;
 
 	i = 0;
-	while (src[i] != '\0' && (i < n))
+	while (i < len && src[i] != '\0')
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (i < len && dst[i] != '\0')
+		dst[i++] = '\0';
+	return (dst);
 }

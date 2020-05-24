@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 19:41:31 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/21 21:51:57 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/24 15:35:06 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,19 +62,50 @@ void  store_env(char **env, char **our_env)
 
 
 /*
+**      A method to assist us in finding any index inside the env variable,  we 
+**      return the index of the env variable if its present otherwise we return
+**      0
+*/
+
+int        ft_find_index(char **search_me, char *compare_me,  char stop_here)
+{
+    int     array_index;
+    char    *return_string;
+
+    array_index = 0;
+
+    if (search_me == NULL || compare_me == NULL)
+        return (FALSE);
+
+    while(search_me[array_index])
+    {
+        return_string = ft_copy_till(search_me[array_index], stop_here);
+
+        if (ft_strcmp(return_string , compare_me) == 0)
+            return (array_index);
+            
+        return_string = NULL;
+        array_index++;
+    }
+    return (FALSE);
+}
+
+/*
 **      A method that will allow us to iterate over our 2d
 **      array and find a given value. We will return the search
 **      string on success and NULL on failure
 */
 
-#include <stdio.h>
 char     *inside_env(char **env, char *find_me)
 {
-    int test = ft_look_till(env ,find_me, '=');
-    // if (ft_look_till(env ,find_me, '=') != TRUE)
-    //     return (DODO);
-    // return (find_me);
-    printf("%d\n", test);
+    int test;
+    
+    test = ft_look_till(env ,find_me, '=');
+
+    if (test == FALSE)
+        find_me = NULL;
+
     return (find_me);
 
 }
+

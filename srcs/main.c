@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:01 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/23 01:51:27 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/24 15:34:36 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,39 @@
 
 int main(int ac, char **av, char **env)
 {
-    // char *search_value;
+    char *search_value;
     (void)ac;
     (void)av;
-     (void)env;
-    // size_t length;
+    size_t length;
     
-    // length = env_len(env);
+    length = env_len(env);
 
-    char str1[] = "Hello World!";
-    size_t len = ft_len_till(str1, ' ');
-    char *str;
-    // str = (char *)malloc(sizeof(char) * len + 1);
-    str = ft_copy_till(str1, ' ');
-    printf("%s\n", str);
-    printf("%ld\n", len);
+    // char str1[] = "Hello World!";
+   
+    // char *str;
+    // str = ft_copy_till(str1, ' ');
+    // printf("%s\n", str);
+    // char *new = ft_strjoin(str, "=");
+    // printf("%s\n", new);
+    // free(str);
+    // free(new);
 
 
-    // global_env = (char **)malloc(sizeof(char *) * length + 1);
-    // store_env(env, global_env);
-    // char *tester = ft_strndup(global_env[2], 9);
-    // search_value = inside_env(global_env, tester);
+    global_env = (char **)malloc(sizeof(char *) * length + 1);
+    store_env(env, global_env);
+    // print_env(global_env);
+
+
+    ft_putendl("");
+    ft_putendl("");
+    char tester[] = "SHELL1";
+    search_value = inside_env(global_env, tester);
+    ft_putstr(search_value);
+
+
+
     
-    // if (search_value == DODO)
-        // ft_putstr(search_value);
-  
-    // else
-        // ft_putchar('k');
-
-
-    
-    // print_env(test);
-    // free(test);
+   
     return (0);
 }
 

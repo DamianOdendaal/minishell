@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 22:16:20 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/23 01:58:00 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/23 23:47:43 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@ int        ft_look_till(char **search_me, char *compare_me,  char stop_here)
     if (search_me == NULL || compare_me == NULL)
         return (FALSE);
 
+    while(search_me[array_index])
+    {
+        return_string = ft_copy_till(search_me[array_index], stop_here);
+        if (ft_strcmp(return_string , compare_me) == 0)
+            return (TRUE);
+        return_string = NULL;
+        array_index++;
+    }
+    return (FALSE);
+}
 
-
-
-
-
-
-        // cool now that you have copy till working you can 
-
-        // 1.)  call the method and run the comparison in this method and then 
-        // 2.) setenv
         // 3.) unsetenv
         // 4.) finally get to the cool prompt
 
@@ -45,11 +46,3 @@ int        ft_look_till(char **search_me, char *compare_me,  char stop_here)
         // when we have that we can then move forward with checking if the index exists or not
         // if not we set the variable into the env
         // else?
-
-    while(search_me[array_index])
-    {
-      
-         array_index++;
-    }
-    return (FALSE);
-}

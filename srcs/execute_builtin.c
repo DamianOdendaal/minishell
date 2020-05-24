@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_copy_till.c                                     :+:      :+:    :+:   */
+/*   execute_builtin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/21 22:17:36 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/23 20:11:37 by dodendaa         ###   ########.fr       */
+/*   Created: 2020/05/23 23:33:42 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/05/24 15:22:20 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/minishell.h"
+
+take in data char ** 
 
 
-/*
-**      actually duplicate till but you got bamboozled
-*/
-
-char    *ft_copy_till(char *search_me, char stop_here)
-{
-    size_t len; 
-    char *return_me;
-
-    len = ft_len_till(search_me, stop_here);
-    return_me  = (char *)malloc(sizeof(char) * len + 1);
-    ft_strncpy(return_me, search_me, len);
-    return (return_me);
-}
+if data ==  env
+e=_S
