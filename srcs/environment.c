@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 19:41:31 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/24 15:35:06 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/24 20:59:57 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,21 +91,51 @@ int        ft_find_index(char **search_me, char *compare_me,  char stop_here)
 }
 
 /*
-**      A method that will allow us to iterate over our 2d
-**      array and find a given value. We will return the search
-**      string on success and NULL on failure
+**  A method that is like the first env length except now we are getting the
+**  complete lenght,  in terms of how many characters there in the env var
 */
 
-char     *inside_env(char **env, char *find_me)
+size_t		env_len_on_steroids(char **env)
 {
-    int test;
-    
-    test = ft_look_till(env ,find_me, '=');
+	size_t		array_index;
+    size_t      full_length;
 
-    if (test == FALSE)
-        find_me = NULL;
+	array_index = 0;
+    full_length = 0;
+	while (env[array_index])
+    {
+        full_length += ft_strlen(env[array_index]);
+		array_index++;
+    }
+    return (full_length);
+}
 
-    return (find_me);
+/*
+**      The getvar method will act as something that will check if a
+**      variable exists within our environment and return the value if it
+**      exists otherwise it will return NULL
+*/
 
+char    *get_var(char **search_me, char *compare_me,  char stop_here)
+{
+    int     array_index;
+    char    *return_string;
+
+    array_index = 0;
+
+    if (search_me == NULL || compare_me == NULL)
+        return (FALSE);
+
+    while(search_me[array_index])
+    {
+        return_string = ft_copy_till(search_me[array_index], stop_here);
+
+        if (ft_strcmp(return_string , compare_me) == 0)
+            return (return_string);
+            
+        return_string = NULL;
+        array_index++;
+    }
+    return (NULL);
 }
 

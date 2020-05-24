@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/23 22:24:53 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/24 20:56:14 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@
 
 char            **global_env; 
 
-char            **argument_split(char *arg, char delim);
+char            *get_var(char **search_me, char *compare_me,  char stop_here);
+size_t		    env_len_on_steroids(char **env);
 int             argument_position(char **arg, char *to_find);
 void	        print_env(char **env);
 void            store_env(char **env, char **our_env);

@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 22:16:49 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/24 15:25:10 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/24 20:41:09 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,14 @@ static void		add_var(char *key, char *value)
         return ;
 
     store_env(global_env, temp_env);
-	// temp_env = (char **)malloc(sizeof(char *) * (length + 1));
-	// temp_env[length--] = 0;
-	// while (global_env[env_index])
-	// {
-	// 	temp_env[env_index] = ft_strdup(global_env[env_index]);
-	// 	free(global_env[env_index]);
-	// 	env_index++;
-	// }
-	// free(global_env);
+    env_index = ft_find_index(global_env, value, '=');
+    // do checks here to see if find_index was a success
 
-    // here we can call str cat instead to append the = to the end of the str
     ft_strcat(key, "=");
     ft_strcat(key, value);
-	// key_temp = ft_strjoin(key, "=");
-	// new_var = ft_strjoin(key_temp, value);
 
-    // ft_strcpy();
 	temp_env[env_index] = ft_strdup(key);
-	// free(key_temp);
-	free(new_var);
+
 	global_env = temp_env;
 }
 
