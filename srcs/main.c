@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:01 by marvin            #+#    #+#             */
-/*   Updated: 2020/05/24 22:13:20 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/24 22:26:16 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,16 @@ static int		exec_com(char **coms)
 	return (0);
 }
 
-static void		increment_sh_level(void)
+void			zsh_level(void)
 {
-	char	*level;
-	
-	level = ft_itoa(ft_atoi(get_var(global_env, "SHLVL", '=')) + 1);
-	ft_set_env("SHLVL", level);
-	free(level);
+	char		*temp;
+	char		*lvl;
+
+	temp = get_var(global_env, "SHLVL", '=');
+	lvl = ft_itoa(ft_atoi(temp) + 1);
+	ft_setenv("SHLVL", lvl);
+	free(temp);
+	free(lvl);
 }
 
 char			*ft_linehandler(char *str)
@@ -115,7 +118,7 @@ int				main(int ac, char *av[], char *env[])
 	// initialize_env(env);
     store_env(env, global_env);
     full_length = env_len_on_steroids(global_env);
-	increment_sh_level();
+	zsh_level();
 
 	while (TRUE)
 	{
