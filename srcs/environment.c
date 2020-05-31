@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 19:41:31 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/24 20:59:57 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/27 19:46:38 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,3 +139,20 @@ char    *get_var(char **search_me, char *compare_me,  char stop_here)
     return (NULL);
 }
 
+/*
+**      The free env method will assist us in free'ing memory 
+**      that was allocated into the array of strings 
+*/
+
+void      free_array(char **arr)
+{
+    int array_index;
+
+    array_index = 0;
+    while (arr[array_index])
+    {
+        free(arr[array_index]);
+        array_index++;
+    }
+    free(arr);
+}

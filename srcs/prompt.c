@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 21:42:51 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/24 22:03:36 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/25 21:02:20 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // that the prompt changes to the tildar sign 
 
 
-static char		*ft_if_HOME(char *path)
+static char		*ft_if_home(char *path)
 {
 	if (!path)
 		return (NULL);
@@ -39,7 +39,7 @@ char			*handle_prompt(size_t path_len)
 	char	path[path_len + 1];
 
 	getcwd(path, path_len);
-	handled_path = ft_if_HOME(path);
+	handled_path = ft_if_home(path);
 
 	return (handled_path);
 }

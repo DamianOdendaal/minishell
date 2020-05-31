@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 22:16:20 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/23 23:47:43 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/05/25 21:40:09 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,3 @@ int        ft_look_till(char **search_me, char *compare_me,  char stop_here)
     }
     return (FALSE);
 }
-
-        // 3.) unsetenv
-        // 4.) finally get to the cool prompt
-
-
-
-        // use copy till to get the index we want in the env then append the = to it 
-        // from there when we have that we can return the index in the env that we are looking for
-        // when we have that we can then move forward with checking if the index exists or not
-        // if not we set the variable into the env
-        // else?
