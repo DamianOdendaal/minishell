@@ -5,81 +5,51 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/24 19:01:24 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/24 21:02:00 by dodendaa         ###   ########.fr       */
+/*   Created: 2019/08/06 08:29:40 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/06/02 17:10:51 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
 
+/*
+**		The code behind the famous command that we love to 
+**		use on the terminal, The change directory method
+*/
 
-void			ft_puterror(char *path, char *str)
+int		exec_cd(char **cmd)
 {
-    ft_strcat(str, path);
-	ft_putendl(str);
-}
+	char	*dir;
+	char	*home;
+	char	cwd[1024];
 
-// print is there to help if the taken in param is - so that we can
-// print where we were before
+	// here we get the home var
+	home = get_env("HOME=");
 
-int				change_dir(char *path, int print, size_t path_size)
-{
-    
-	char	cwd_path[path_size + 1];
+	// here we check if the command passed in is only the keyword cd
+	if (cmd[1] == NULL || (ft_strcmp(cmd[1], "~") == 0))
+		exec_path(home);
 
-	getcwd(cwd_path, path_size);
-	if (chdir(path) == 0)
+	
+	else if (cmd[1][0] == '$')
+		exec_env(cmd);
+
+	else if ((ft_strchr(cmd[1], '~') != NULL) && (ft_strlen(cmd[1]) > 1))
 	{
-		ft_setenv("OLDPWD", cwd_path);
-		if (print)
-			ft_putendl(path);
-		getcwd(cwd_path, path_size);
-		ft_setenv("PWD", cwd_path);
-		return (0);
+		reset_env("OLDPWD", getcwd(cwd, sizeof(cwd)));
+		dir = ft_strjoin(home, ft_strchr(cmd[1], '~') + 1);
+		if (chdir(dir) != 0)
+			error_found(dir, "cd");
+		free(dir);
 	}
+	else if (ft_strcmp(cmd[1], "-") == 0)
+		exec_prev();
+		
 	else
-	{
-		if (access(path, 0) == -1)
-			ft_puterror(path, "cd: no such file or directory: ");
-		else if (access(path, 1) == -1)
-			ft_puterror(path, "cd: permission denied: ");
-		return (1);
-	}
-}
-
-static int		too_many_args(char **command_string)
-{
-    size_t len;
-
-    len = env_len(command_string);
-    // cant have more than 2 args here
-	if (len > 2)
-	{
-		ft_putstr("cd: too many arguments\n");
-		return (1);
-	}
-	return (0);
-}
-
-int				ft_cd(char **command_string, int print)
-{
-    size_t path_len;
-    char *path;
-
-    path_len = env_len_on_steroids(global_env);
-    path = get_var(global_env, "HOME", '=');
-
-	if ((!command_string[1] && ft_strequ("cd", command_string[0])) || ft_strequ(command_string[1], "--"))
-		return (change_dir(path, 0, path_len));
-        
-	else if (ft_strequ(command_string[1], "-"))
-		return (change_dir(path, 1, path_len));
-
-	else
-	{
-		if (too_many_args(command_string))
-			return (1);
-		return (change_dir(command_string[1], print, path_len));
-	}
+		exec_path(cmd[1]);
+	reset_env("PWD", getcwd(cwd, sizeof(cwd)));
+	free_her(cmd);
+	free(home);
+	return (1);
 }

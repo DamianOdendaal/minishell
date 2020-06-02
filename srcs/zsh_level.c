@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/25 20:56:39 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/25 21:02:20 by dodendaa         ###   ########.fr       */
+/*   Created: 2020/06/02 17:22:39 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/06/02 17:22:53 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,18 @@
 **	 and the child shell is a level 2 shell.
 */
 
-void			zsh_level(void)
+
+void	zsh_level(void)
 {
 	char		*temp;
 	char		*lvl;
+	int 		level;
 
-	temp = get_var(global_env, "SHLVL", '=');
-	lvl = ft_itoa(ft_atoi(temp) + 1);
-	ft_setenv("SHLVL", lvl);
+	temp = get_env("SHLVL");
+	level = ft_atoi(temp) + 1;
+	lvl = ft_itoa(level);
+
+	reset_env("SHLVL", lvl);
 	free(temp);
 	free(lvl);
 }

@@ -4,31 +4,40 @@
 /*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
-/*    
-                                            +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/24 00:59:38 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/24 09:27:47 by dodendaa         ###   ########.fr       */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/07 13:37:22 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/06/02 17:00:27 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-
 /*
-**      Echo , the builtin that will echo what you put in back out to the
-**      stdout
+**		Echo literally does what it says bro
 */
 
-int     ft_echo(char **command_arr)
+int	exec_echo(char **cmd)
 {
-    size_t length;
-    size_t index;
+	int		i;
+	char	*temp;
 
-    length = env_len(command_arr);
-    // if no args came after echo
-    if (length == 1)
-        ft_putendl("");
-    index = 0;
-    while (++index < length)
-        ft_putstr(command_arr[index]);
+	i = 1;
+	while (cmd[i])
+	{
+		if (cmd[i][0] == '$')
+		{
+			temp = get_env(cmd[i] + 1);
+			ft_putstr(temp);
+			free(temp);
+		}
+		else
+			ft_putstr(cmd[i]);
+		if (cmd[i + 1] == NULL)
+			ft_putchar('\n');
+		else
+			ft_putchar(' ');
+		i++;
+	}
+	free_her(cmd);
+	return (1);
 }

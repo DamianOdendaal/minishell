@@ -1,40 +1,52 @@
 
 
-#include <stdio.h>
-#include <string.h>
-
-
-#include <unistd.h>
+#include "includes/minishell.h"
 
 
 
 
-void    changer(char *str, int change)
+char	**argsplit(char *str)
 {
+	char	**arr;
+	int		loop;
 
-    printf("%d\n", strlen(str));
-    change = 10;
+	loop = 0;
+	while (str[loop])
+	{
+        ft_putnbr(loop);
+		if (str[loop] == '"')
+		{
+			loop++;
+			while (str[loop] != '"')
+				loop++;
+		}
+		else if (ft_iswhitespace(str[loop]))
+			str[loop] = '"';
+		loop++;
+	}
+	arr = ft_strsplit(str, '"');
+	ft_strdel(&str);
+	return (arr);
 }
 
 
-int main(int ac, char **av, char **env)
+int main(void)
 {
-    size_t len;
-    (void)ac;
-    (void)av;
-    int result;
-    const char *filename = "/home/Mr_Ode/Documents/minishell/libft/";
+    char **tester;
+    int index = 0;
+    int second = 0;
 
+   
 
-    result = access(filename, F_OK);
-    printf("%d\n", result);
+    ft_putstr("do i get here?");
+    tester = argsplit("this is the strings that i should use to test");
+    while(tester[second])
+    {
+        
+        ft_putstr(tester[second]);
+        second++;
+    }
 
-
-    char *str = strdup("Awe bra");
-    // len = env_len_on_steroids(env);
-    int test = 2;
-    changer(str, test);
-    printf("This is the new test %d\n", test);
 
     return (0);
 }
