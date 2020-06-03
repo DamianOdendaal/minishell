@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 09:26:23 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:10:05 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 17:30:27 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,32 @@
 
 int		main(int ac, char **av, char **env)
 {
-	int		i;
-	char	*line;
+	int		loop;
+	char	*input_data;
 	char	**commands;
 
 	(void)ac;
 	(void)av;
-	i = 1;
-	pop_env(env);
+	loop = 1;
+	store_env(env);
 	zsh_level();
-	while (i)
+	while (loop)
 	{
-		print_path();
+		prompt_path();
 		signal(SIGINT, handle_sigint);
-		line = readline(" ");
-		if (ft_strchr(line, '"') != NULL)
-			line = end_quote(line, '"');
+		input_data = readline(" ✗ ");
+		if (ft_strchr(input_data, '"') != NULL)
+			input_data = ft_forgot_quote(input_data, '"');
 
-		else if (ft_strchr(line, '\'') != NULL)
-			line = end_quote(line, '\'');
+		// do the check for if someone passes \"
+		else if (ft_strchr(input_data, '\'') != NULL)
+			input_data = ft_forgot_quote(input_data, '\'');
 
-		add_history(line);
-		commands = ft_strsplit(line, ';');
-		free(line);
-		i = execute_args(commands);
-		free_her(commands);
+		add_history(input_data);
+		commands = ft_strsplit(input_data, ';');
+		free(input_data);
+		loop = ft_exec_args(commands);
+		array_free(commands);
 	}
-	free_her(global_env);
+	array_free(global_env);
 }

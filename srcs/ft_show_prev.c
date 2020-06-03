@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 16:27:57 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 16:28:44 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 17:17:31 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	exec_prev(void)
 	if (chdir(dir) != 0)
 		error_found(dir, "cd");
 
-	reset_env("OLDPWD", temp);
+	update_env("OLDPWD", temp);
 	free(dir);
 	free(temp);
 }

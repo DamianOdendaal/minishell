@@ -6,14 +6,19 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 17:19:19 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:20:01 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 16:45:04 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-// change this name here and make it different in the whole project 
-void	free_her(char **str)
+/*
+**	After working with all of the resources we are
+**	going to need to free the data that we used and
+**	the array we used to store the data 
+*/ 
+
+void	array_free(char **str)
 {
 	int	i;
 

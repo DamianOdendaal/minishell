@@ -6,15 +6,20 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 17:14:08 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:15:40 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 17:29:35 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
+/*
+**		Get path is a method that is going to help us 
+**		get the binary as a path so that we can us it 
+**		in our minishell. An example would be /usr/bin/ls as ls
+*/
+
 char	*get_path(char *com)
 {
-	// come here and try to take out some of the params here 
 	int			i;
 	char		*temp;
 	char		**bin;
@@ -22,27 +27,22 @@ char	*get_path(char *com)
 	struct stat	info;
 
 	i = -1;
-	// try to change the logic for the get_env method 
-	
+
 	temp = get_env("PATH=");
 	bin = ft_strsplit(temp, ':');
 	ft_strdel(&temp);
 	while (bin && bin[++i])
 	{
-
-		// come back here with an understanding on how this do path
-		//method works 
-
-		path = do_path(bin[i], com);
+		path = get_bin(bin[i], com);
 		if (lstat(path, &info) == -1)
 			free(path);
 		else
 		{
-			free_her(bin);
+			array_free(bin);
 			return (path);
 		}
 	}
 	if (bin != NULL)
-		free_her(bin);
+		array_free(bin);
 	return (NULL);
 }

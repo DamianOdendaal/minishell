@@ -6,12 +6,11 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 17:21:51 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:22:28 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 13:28:23 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
-
 
 /*
 **	Here we are catering for if out of a pair of 2 quotes if only
@@ -19,27 +18,26 @@
 **
 */ 
 
-char	*end_quote(char *str, char q)
+char	*ft_forgot_quote(char *str, char quote)
 {
 	char	*ptr;
-	char	*temp;
-	char	*str2;
+	char	*pedro;
+	char	*incoming_data;
 
 	ptr = str;
-	while ((ptr = ft_strchr(ptr, q)) != NULL)
+	pedro = DODO;
+	while ((ptr = ft_strchr(ptr, quote)) != NULL)
 	{
 		ptr++;
-		if ((ptr = ft_strchr(ptr, q)) == NULL)
+		if ((ptr = ft_strchr(ptr, quote)) == NULL)
 		{
-			if (q == '"')
-				str2 = readline("\033[1;35mdquote$> \033[0m");
+			if (quote == '"')
+				incoming_data = readline("dquote$> ");
 			else
-				str2 = readline("\033[1;35mquote$> \033[0m");
-			temp = ft_strjoin(str, "\n");
-			ft_strdel(&str);
-			str = ft_strjoin(temp, str2);
-			ft_strdel(&str2);
-			ft_strdel(&temp);
+				incoming_data = readline("quote$> ");
+
+			vote_for_pedro(str, incoming_data, "\n", pedro);
+			ft_strdel(&incoming_data);
 			ptr = str;
 		}
 		else

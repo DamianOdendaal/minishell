@@ -6,17 +6,20 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 08:57:50 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:18:28 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 16:50:19 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
 /*
-**	
+**	system commands are the commands that our minishell runs
+**	but these were not part of the builtins that we needed to 
+**	recreate , such as ls and other builtins that were not 
+**	part of the project scope
 */
 
-int		exec_sys(char **cmd)
+int		system_command(char **cmd)
 {
 	struct stat	info;
 	char		*path;
@@ -34,11 +37,12 @@ int		exec_sys(char **cmd)
 			return (sys_call(cmd, path));
 		}
 		
+		// use defined macros here 
 	ft_putstr("minishell: command not found: ");
 	ft_putendl(cmd[0]);
 
 	if (cmd)
-		free_her(cmd);
+		array_free(cmd);
 	ft_strdel(&path);
 	return (0);
 	

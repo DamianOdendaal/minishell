@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/06/02 09:00:44 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 17:33:18 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define NOTEXIST	("No such file or directory.")
 # define NOTDIR		("Error opening directory.")
 # define NOPERM		("minishell: permission denied: ")
+# define CANTFORK   ("minishell: unable to fork process:")
 # define EXISTS(x)  (x != '\0')
 # define NOSPACE(x) (x != ' ')
 
@@ -46,34 +47,36 @@
     
 char            **global_env;
 void	exec_prev(void);
-void	exec_path(char *path);
-void	exec_env(char **cmd);
-int		exec_cd(char **cmd);
-int		exec_tilda(char **cmd);
-int	    exec_help(void);
-int	    exec_author(void);
-int	    exec_echo(char **cmd);
-void	pop_env(char **env);
-int		reset_env(char *key, char *value);
+void	ft_change_path(char *path);
+void	ft_path_inside(char **command_array);
+int		ft_cd(char **cmd);
+int		ft_handle_tildar(char **command_array);
+int	    ft_help_cmd(void);
+int	    ft_authors(void);
+int	    ft_echo(char **cmd);
+void	store_env(char **env);
+int		update_env(char *key, char *value);
 int		print_env(char **cmd);
 int		set_env(char **cmd);
 int		unset_env(char **cmd);
 void	error_found(char *path, char *cmd);
 int		error_params(char **cmd, int i);
-int		check_sys(char **cmd);
-char	**remove_quotes(char *str);
-int		execute_args(char **cmds);
+int		ft_is_builtin(char **cmd);
+char	**ft_get_content(char *str);
+int		ft_exec_args(char **command_strings);
 void	handle_sigint(int sig);
-char	*do_path(char *bin, char *com);
+char	*get_bin(char *bin, char *com);
 char	*get_path(char *com);
-void	print_path(void);
+void	prompt_path(void);
 void	proc_signal_handler(int signo);
 int		sys_call(char **cmd, char *path);
-int		exec_sys(char **cmd);
-void	free_her(char **str);
+int		system_command(char **cmd);
+void	array_free(char **str);
 char	*get_env(char *str);
-char	*end_quote(char *str, char q);
+char	*ft_forgot_quote(char *str, char quote);
 void	zsh_level(void);
-int		preform_set(char **temp, char **cmd);
+int		ft_insert_var(char **temp, char **cmd);
+void	vote_for_pedro(char *left_man, char *right_man, char *middle_man, char *another_man);
+
 
 #endif

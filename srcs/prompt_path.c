@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_path.c                                       :+:      :+:    :+:   */
+/*   prompt_path.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 14:49:29 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:15:37 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 12:33:47 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **	to be if its niether of the two
 */
 
-void	print_path(void)
+void	prompt_path(void)
 {
 	char	cwd[1024];
 	char	*ptr;
@@ -36,7 +36,7 @@ void	print_path(void)
 			ft_putstr("~/");
 		else
 		{
-			// do i need to use str sub here?
+			
 			ptr = ft_strsub(cwd, ft_strlen(home), ft_strlen(cwd));
 			ft_putchar('~');
 			ft_putstr(ptr);

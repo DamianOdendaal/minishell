@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:35:18 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:01:53 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 17:09:06 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,13 @@ void	error_found(char *path, char *cmd)
 	stat(path, &sb);
 	if (S_ISREG(sb.st_mode))
 	{
-		//here we are going to call the 3t_printer
-
-		ft_putstr(cmd);
-		ft_putstr(": not a directory: ");
-		ft_putendl(path);
+		ft_3t_printer(cmd, ": not a directory: ", path);
+		ft_putchar('\n');
 	}
 	else
 	{
-		//here we are going to call the 3t_printer
-		ft_putstr(cmd);
-		ft_putstr(": no such file or directory: ");
-		ft_putendl(path);
+		ft_3t_printer(cmd, ": no such file or directory: ", path);
+		ft_putchar('\n');
 	}
 }
 
@@ -38,19 +33,14 @@ int		error_params(char **cmd, int i)
 {
 	if (i < 0)
 	{
-		// call 3t_printer here with the last parameter as the newline 
-		ft_putstr(cmd[0]);
-		ft_putendl(": to few arguments");
+		ft_3t_printer(cmd[0], ": to few arguments", "\n");
 	}
 
 	else
 	{
-		// call 3t_printer here with the last parameter as the newline 
-
-		ft_putstr(cmd[0]);
-		ft_putendl(": to many arguments");
+		ft_3t_printer(cmd[0], ": to many arguments", "\n");
 	}
 
-	free_her(cmd);
+	array_free(cmd);
 	return (0);
 }

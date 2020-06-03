@@ -6,16 +6,20 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 16:35:36 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:10:51 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 16:44:49 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
 
-// doc string here 
+/*
+**		Handle tilar is here so that we can change the 
+**		prompt path to the tildar sign when we are in the 
+**		home dir
+*/
 
-int		exec_tilda(char **cmd)
+int		ft_handle_tildar(char **command_array)
 {
 	char	*home;
 	char	*temp;
@@ -23,25 +27,24 @@ int		exec_tilda(char **cmd)
 
 	home = get_env("HOME=");
 
-	if (ft_strlen(cmd[0]) > 1)
+	if (ft_strlen(command_array[0]) > 1)
 	{
-		// here we get the path within the command and append it to the home var
-		// so that we can have the whole path var for when tildar is needed to be displayed
-		temp = ft_strsub(cmd[0], 1, ft_strlen(cmd[0]) - 1);
+		temp = ft_strsub(command_array[0], 1, ft_strlen(command_array[0]) - 1);
 		path = ft_strjoin(home, temp);
 
 		free(temp);
 		free(home);
-		exec_path(path);
+		ft_change_path(path);
 		free(path);
-		free_her(cmd);
+		array_free(command_array);
+		
 		return (1);
 	}
 	else
 	{
-		exec_path(home);
+		ft_change_path(home);
 		free(home);
-		free_her(cmd);
+		array_free(command_array);
 		return (1);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 16:52:59 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 16:54:11 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 17:17:57 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 
 
-// what reset is doing is its going into the env var and it is 
-// updating that value inside the env var 
+/*
+**	Update env will search through the env variable and 
+**	search for a value that exists and update it 
+*/
 
-// here we return a boolean value based on if we updated the 
-// value or not 
-
-int		reset_env(char *key, char *value)
+int		update_env(char *key, char *value)
 {
 	int		i;
 	char	*temp;
@@ -33,14 +32,8 @@ int		reset_env(char *key, char *value)
 		{
 			temp_key = ft_strjoin(key, "=");
 			temp = ft_strjoin(temp_key, value);
-
-			//try and replace this stuff with strcat ,  break code down into 
-			// more modular functions 
-
 			ft_strdel(&global_env[i]);
-
 			global_env[i] = ft_strdup(temp);
-
 			free(temp_key);
 			free(temp);
 			return (1);

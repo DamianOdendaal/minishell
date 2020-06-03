@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 17:04:32 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:06:36 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 13:47:38 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 
 /*
-**
+**	This method will assist us in getting the content that is
+**	inside quotes, it will find any word and occurence of whitespace
+**	will replace the white spaces with quotes so that in the end 
+**	any quotes that were already there and newly added ones will 
+**	be removed with string split and we will have only the content itself
 */
 
-char	**remove_quotes(char *str)
+char	**ft_get_content(char *str)
 {
 	int		i;
 	char	**ret;

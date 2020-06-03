@@ -6,15 +6,20 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 16:39:36 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 16:48:15 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 12:26:43 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
 
-//store env 
-void	pop_env(char **env)
+/*
+**      A method used to store the environment variable in
+**      its own array so we can manipulate this as we need to 
+**      within the project
+*/
+
+void	store_env(char **env)
 {
 	int i;
 

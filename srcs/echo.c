@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 13:37:22 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:00:27 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 16:45:11 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,28 @@
 **		Echo literally does what it says bro
 */
 
-int	exec_echo(char **cmd)
+int	ft_echo(char **command_array)
 {
 	int		i;
 	char	*temp;
 
 	i = 1;
-	while (cmd[i])
+	while (command_array[i])
 	{
-		if (cmd[i][0] == '$')
+		if (command_array[i][0] == '$')
 		{
-			temp = get_env(cmd[i] + 1);
+			temp = get_env(command_array[i] + 1);
 			ft_putstr(temp);
 			free(temp);
 		}
 		else
-			ft_putstr(cmd[i]);
-		if (cmd[i + 1] == NULL)
+			ft_putstr(command_array[i]);
+		if (command_array[i + 1] == NULL)
 			ft_putchar('\n');
 		else
 			ft_putchar(' ');
 		i++;
 	}
-	free_her(cmd);
+	array_free(command_array);
 	return (1);
 }

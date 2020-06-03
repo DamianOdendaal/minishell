@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 16:57:42 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:00:27 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 17:33:14 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int		set_env(char **cmd)
 
 	// if we successfully update the values free and 
 	// return to indicate all is good 
-	if (reset_env(cmd[1], cmd[2]))
+	if (update_env(cmd[1], cmd[2]))
 	{ 
-		free_her(cmd);
+		array_free(cmd);
 		return (1);
 	}
 	
@@ -42,5 +42,5 @@ int		set_env(char **cmd)
 	i++;
 	temp = (char **)malloc((sizeof(char *) * (i + 1)));
 	temp[i] = 0;
-	return (preform_set(temp, cmd));
+	return (ft_insert_var(temp, cmd));
 }

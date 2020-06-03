@@ -20,7 +20,7 @@
 
 
 // change to insert var
-int		preform_set(char **temp, char **cmd)
+int		ft_insert_var(char **temp, char **cmd)
 {
 	char	*temp_key;
 	char	*temp_rule;
@@ -31,7 +31,7 @@ int		preform_set(char **temp, char **cmd)
 	i = -1;
 	while (global_env[++i])
 		temp[i] = ft_strdup(global_env[i]);
-	free_her(global_env);
+	array_free(global_env);
 
 	// here we are creating the value that we are going to insert into the 
 	// new env 
@@ -42,7 +42,7 @@ int		preform_set(char **temp, char **cmd)
 	temp_rule = ft_strjoin(temp_key, cmd[2]);
 	
 	free(temp_key);
-	free_her(cmd);
+	array_free(cmd);
 	// try to avoid strdup here 
 	temp[i] = ft_strdup(temp_rule);
 	free(temp_rule);

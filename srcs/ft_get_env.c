@@ -6,13 +6,11 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 17:21:07 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/02 17:21:34 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 12:29:39 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
-
-
 
 /*
 **	This is a method that will make looking though the env 
