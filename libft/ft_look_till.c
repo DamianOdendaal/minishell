@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 22:16:20 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/25 21:40:09 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 01:26:09 by groovyswa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int        ft_look_till(char **search_me, char *compare_me,  char stop_here)
     int     array_index;
     int     string_index;
     char    *return_string;
-    char    **the_strings;
+    //char    **the_strings;
 
     array_index = 0;
     string_index = 0;

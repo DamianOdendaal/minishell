@@ -6,27 +6,28 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/06/02 09:00:44 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/02 19:42:49 by groovyswa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <dirent.h>
-# include <stdio.h>
-# include <readline/readline.h>
-# include <readline/history.h>
-# include <signal.h>
-# include <sys/wait.h> 
-# include <sys/stat.h>
-# include <sys/types.h>
-# include <grp.h>
-# include <pwd.h>
-# include <time.h>
-# include <errno.h>
-# include "../libft/libft.h"
+# ifndef	 MINISHELL_H
+# define	 MINISHELL_H
+
+#include <unistd.h>
+#include <stdlib.h>
+#include <dirent.h>
+#include <stdio.h>
+#include <readline/readline.h>
+#include <readline/history.h>
+#include <signal.h>
+#include <sys/wait.h> 
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <grp.h>
+#include <pwd.h>
+#include <time.h>
+#include <errno.h>
+#include "../libft/libft.h"
 
 
 # define NOTEXIST	("No such file or directory.")

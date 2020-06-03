@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/31 16:50:06 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/31 17:23:18 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/03 01:27:35 by groovyswa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strappend(char *s1, const char c)
 {
-	int i;
+//	int i;
     char *return_string;
     char *convert;
 

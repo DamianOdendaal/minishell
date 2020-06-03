@@ -1,5 +1,5 @@
 #!usr/bin/bash
 
 git add -A
-git commit -m "Dōdō wa saikō no kōdādesu"
+git commit -m "Things may look alil different but just trust me they work"
 git push

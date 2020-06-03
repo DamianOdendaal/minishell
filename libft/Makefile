@@ -6,11 +6,11 @@
 #    By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/05 12:58:49 by dodendaa          #+#    #+#              #
-#    Updated: 2020/05/31 17:16:40 by dodendaa         ###   ########.fr        #
+#    Updated: 2020/06/02 20:54:12 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = -Wall -Werror -Wextra -I. -c
+CFLAGS = -Wall -Werror -Wextra
 
 NAME = libft.a
 
@@ -34,7 +34,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 OBJS = $(SRCS:.c=.o)
 
 %.o: %.c libft.h
-	@gcc -c $< -o $@
+	@gcc $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
@@ -44,11 +44,11 @@ $(NAME): $(OBJS)
 	@echo "Library Compiled"
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all, re, fclean, clean
+.PHONY: all re fclean clean
