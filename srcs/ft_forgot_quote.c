@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 17:21:51 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/03 13:28:23 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 16:22:50 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,4 @@ char	*ft_forgot_quote(char *str, char quote)
 	}
 	return (str);
 }
+

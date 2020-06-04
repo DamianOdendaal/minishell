@@ -1,11 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_head_outta_here.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/04 15:01:22 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/06/04 16:22:06 by dodendaa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../includes/minishell.h"
 
-#include "includes/minishell.h"
-
-
-
-
-static void	draw_header(void)
+int	draw_header(void)
 {
 	ft_putchar('\n');
 	ft_putendl("                 ███           ███  ");
@@ -16,17 +23,10 @@ static void	draw_header(void)
 	ft_putendl(" ███   ███   ███ ███ ███   ███ ███  ███          ███▄▄▄▄███  ███▄▄▄     ███       ███");
 	ft_putendl(" ███   ███   ███ ███ ███   ███ ███  ██████████   ███▀▀▀▀███  ███▀▀▀     ███       ███");
 	ft_putendl(" ███   ███   ███ ███ ███   ███ ███         ███   ███    ███  ███    ██  ███       ███");
-	ft_putendl(" ███   ███   ███ ███ ███   ███ ███  ███    ███   ███    ███  ███    ██  ███    ██ ███▌   ██");
+	ft_putendl(" ███   ███   ███ ███ ███   ███ ███  ███    ███   ███    ███  ███    ██  ███    ██ ███   ██");
 	ft_putendl(" ███   ███   ███ ███ ███   ███ ███  ██████████   ███    ███  █████████  █████████ █████████");
 	ft_putendl("");
 	ft_putendl("By the person you expected the least");
 	ft_putendl("Not you");
-	return ;
+	return (1);
 }
-
-int main(void)
-{
-	draw_header();
-    return (0);
-}
-

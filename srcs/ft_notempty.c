@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   echo.c                                             :+:      :+:    :+:   */
+/*   ft_notempty.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/07 13:37:22 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/04 09:11:52 by dodendaa         ###   ########.fr       */
+/*   Created: 2020/06/04 09:57:38 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/06/04 09:58:08 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
 /*
-**		Echo literally does what it says bro
+** Simple little function to check whether the user input contains anything
+** other than spaces and tabulations. Just incase they try to pull a sneaky
+** on ya !
 */
 
-int	ft_echo(char **command_array)
+int 	ft_notempty(char *str)
 {
-	int		i;
-	char	*temp;
-
-	i = 1;
-	while (command_array[i])
+	char 	*tmp;
+	int 	index;
+	tmp = str;
+	index = -1;
+	while (tmp[++index])
 	{
-		if (command_array[i][0] == '$')
-		{
-			temp = get_env(command_array[i] + 1);
-			ft_putstr(temp);
-			free(temp);
-		}
-		else
-			ft_putstr(command_array[i]);
-			
-		if (command_array[i + 1] == NULL)
-			ft_putchar('\n');
-		else
-			ft_putchar(' ');
-		i++;
+		if (tmp[index] == 32 || tmp[index] == 9)
+			continue;
+		if (tmp[index] != 32 && tmp[index] != 9)
+			return (1);
 	}
-	array_free(command_array);
-	return (1);
+	return (0);
 }

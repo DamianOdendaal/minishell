@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_store_env.c                                     :+:      :+:    :+:   */
+/*   ft_strchr_index.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/02 16:39:36 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/04 09:45:00 by dodendaa         ###   ########.fr       */
+/*   Created: 2020/06/04 16:30:57 by dodendaa          #+#    #+#             */
+/*   Updated: 2020/06/04 16:32:11 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "libft.h"
 
-
-/*
-**      A method used to store the environment variable in
-**      its own array so we can manipulate this as we need to 
-**      within the project
-*/
-
-void	store_env(char **env)
+int     ft_strchr_index(const char *s, int c)
 {
-	int i;
+	int		i = 0;
+	char	*str;
 
-	i = 0;
-	while (env[i])
-		i++;
-
-	global_env = (char **)malloc((sizeof(char *) * (i + 1)));
-	i = 0;
-	while (env[i])
+	str = (char *)s;
+	while (str[i])
 	{
-		global_env[i] = ft_strdup(env[i]);
+		if (str[i] == (char)c)
+			return (i);
 		i++;
 	}
-	global_env[i] = NULL;
+	if (c == '\0')
+		return (0);
+	return (0);
 }

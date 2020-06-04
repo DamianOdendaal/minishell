@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 17:03:04 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/03 16:50:17 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 16:22:20 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,32 @@
 
 int		ft_is_builtin(char **command_array)
 {
-	if (ft_strequ(command_array[0], "exit"))
+	// make another command for printing a header 
+	if (ft_strequ(command_array[0], CLOSE))
 		return (-1);
 
-	else if (ft_strequ(command_array[0], "cd"))
+	else if (ft_strequ(command_array[0], LMAO))
+		return (draw_header());
+
+	else if (ft_strequ(command_array[0], OUTOFHERE))
 		return (ft_cd(command_array));
 
-	else if (ft_strequ(command_array[0], "setenv"))
+	else if (ft_strequ(command_array[0], TAKEHERE))
 		return (set_env(command_array));
 
-	else if (ft_strequ(command_array[0], "echo"))
+	else if (ft_strequ(command_array[0], ECHO))
 		return (ft_echo(command_array));
 		
-	else if (ft_strequ(command_array[0], "env"))
+	else if (ft_strequ(command_array[0], ENV))
 		return (print_env(command_array));
 
-	else if (ft_strequ(command_array[0], "unsetenv"))
+	else if (ft_strequ(command_array[0], GIMMIE))
 		return (unset_env(command_array));
 
-	else if (ft_strequ(command_array[0], "help"))
+	else if (ft_strequ(command_array[0], TASUKETE))
 		return (ft_help_cmd());
 
-	else if (ft_strequ(command_array[0], "author"))
+	else if (ft_strequ(command_array[0], DABRUS))
 		return (ft_authors());
 
 	else if (command_array[0][0] == '~')

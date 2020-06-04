@@ -6,7 +6,7 @@
 #    By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/05 12:58:49 by dodendaa          #+#    #+#              #
-#    Updated: 2020/05/31 17:16:40 by dodendaa         ###   ########.fr        #
+#    Updated: 2020/06/04 16:33:53 by dodendaa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	   ft_strndup.c ft_intlen.c ft_space.c ft_swap.c ft_3t_printer.c ft_putstrTab.c \
 	   ft_charcasecmp.c ft_lstiter_data.c ft_strdupdel.c ft_look_till.c ft_copy_till.c\
 	   ft_len_till.c ft_last_index.c ft_return_free.c ft_append.c ft_strstr_bool.c\
-		ft_strappend.c ft_char_to_string.c\
+		ft_strappend.c ft_char_to_string.c ft_strchr_index.c\
 
 OBJS = $(SRCS:.c=.o)
 

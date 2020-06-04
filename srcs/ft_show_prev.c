@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 16:27:57 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/03 17:17:31 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 14:04:43 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 */
 
 
-// change to show_previous
-void	exec_prev(void)
+
+void	show_previous(void)
 {
 	char	*temp;
 	char	cwd[1024];

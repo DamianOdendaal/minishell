@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 13:31:08 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/05/31 17:16:30 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 16:33:05 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef  int (*t_compfunc)(void *a, void *b);
 typedef  void (*t_iter_func)(t_list *node);
 typedef  void (*t_iterdata_func)(t_list *node, void *data);
 
+int     			ft_strchr_index(const char *s, int c);
 char    			*ft_char_to_string(char convert_me);
 char				*ft_strappend(char *s1, const char c);
 int        			ft_strstr_bool(char *search_me, char *compare_me,  char stop_here);

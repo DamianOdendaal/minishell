@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 17:06:11 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/03 13:57:29 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 09:19:29 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int		ft_exec_args(char **command_strings)
 		else
 			i++;
 	}
+	// free(args);
 	return (1);
 }

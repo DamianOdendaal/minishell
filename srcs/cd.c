@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 08:29:40 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/03 17:17:31 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 14:04:39 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,18 @@ int		ft_cd(char **cmd)
 			error_found(dir, "cd");
 		free(dir);
 	}
-	// come back here and add to go to home if we make it --
+
 	else if (ft_strcmp(cmd[1], "-") == 0)
-		exec_prev();
-		
+		show_previous();
+	
+	else if (ft_strcmp(cmd[1], "--") == 0)
+	{
+		ft_change_path(home);
+		update_env("PWD", getcwd(cwd, sizeof(cwd)));
+		free(home);
+		return (1);
+	}
+	
 	else
 		ft_change_path(cmd[1]);
 	update_env("PWD", getcwd(cwd, sizeof(cwd)));

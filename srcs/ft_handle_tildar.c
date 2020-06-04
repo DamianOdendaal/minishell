@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 16:35:36 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/03 16:44:49 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 11:29:29 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 **		Handle tilar is here so that we can change the 
 **		prompt path to the tildar sign when we are in the 
 **		home dir
-*/
+*/ 
 
 int		ft_handle_tildar(char **command_array)
 {
@@ -37,7 +37,6 @@ int		ft_handle_tildar(char **command_array)
 		ft_change_path(path);
 		free(path);
 		array_free(command_array);
-		
 		return (1);
 	}
 	else

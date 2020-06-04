@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/06/03 17:33:18 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 16:21:46 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,20 @@
 # define OUTOFHERE  ("cd")
 # define CLOSE      ("exit")
 # define ENV        ("env")
-# define GIMMIEWORDS  ("unsetenv")
+# define GIMMIE  ("unsetenv")
 # define TAKEHERE  ("setenv")
 # define ECHO  ("echo")
+# define TASUKETE  ("help")
+# define DABRUS  ("author")
+# define LMAO  ("header")
+
+
 
     
 char            **global_env;
-void	exec_prev(void);
+int 	draw_header(void);
+int 	ft_notempty(char *str);
+void	show_previous(void);
 void	ft_change_path(char *path);
 void	ft_path_inside(char **command_array);
 int		ft_cd(char **cmd);

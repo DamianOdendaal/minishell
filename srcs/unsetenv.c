@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 16:58:19 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/03 17:14:59 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 16:07:00 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ int		unset_env(char **cmd)
 	i = 0;
 	if (cmd[1] && cmd[2])
 		return (error_params(cmd, 1));
+		
 	else if (cmd[1] == NULL)
 		return (error_params(cmd, -1));
 
 	if (cmd[1][0] == '$')
 		temp = get_env(cmd[1] + 1);
+
 	else
 		temp = ft_strdup(cmd[1]);
 
@@ -40,6 +42,7 @@ int		unset_env(char **cmd)
 		if (ft_strncmp(global_env[i], temp, ft_strlen(temp)) == 0)
 		{
 			ft_strdel(&global_env[i]);
+			global_env[i] = NULL;
 			array_free(cmd);
 			free(temp);
 			return (1);

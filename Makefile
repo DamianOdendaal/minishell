@@ -6,7 +6,7 @@
 #    By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/10 14:56:05 by marvin            #+#    #+#              #
-#    Updated: 2020/06/03 13:17:22 by dodendaa         ###   ########.fr        #
+#    Updated: 2020/06/04 16:23:14 by dodendaa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SOURCES = cd.c ft_authors.c echo.c errors.c minishell.c \
 			ft_remove_qoutes.c ft_exec_args.c ft_process_interupt.c \
 			ft_do_path.c process_handler.c ft_sys_call.c ft_free_stuff.c \
 			ft_get_env.c ft_forgot_quote.c zsh_level.c  ft_fetch_path.c\
-			vote_for_pedro.c \
+			vote_for_pedro.c ft_notempty.c ft_head_outta_here.c\
 
 OBJECTS = $(addprefix $(OBJS_D)/,$(SOURCES:.c=.o))
 
