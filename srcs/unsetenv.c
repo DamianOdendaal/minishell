@@ -40,6 +40,7 @@ int		unset_env(char **cmd)
 		if (ft_strncmp(global_env[i], temp, ft_strlen(temp)) == 0)
 		{
 			ft_strdel(&global_env[i]);
+			global_env[i] = NULL;
 			array_free(cmd);
 			free(temp);
 			return (1);
