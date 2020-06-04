@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 17:03:04 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/04 16:22:20 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 19:40:06 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 
 int		ft_is_builtin(char **command_array)
 {
-	// make another command for printing a header 
 	if (ft_strequ(command_array[0], CLOSE))
 		return (-1);
 

@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 08:57:50 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/03 16:50:19 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 20:31:36 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,7 @@ int		system_command(char **cmd)
 			path = ft_strdup(cmd[0]);
 			return (sys_call(cmd, path));
 		}
-		
-		// use defined macros here 
-	ft_putstr("minishell: command not found: ");
-	ft_putendl(cmd[0]);
+	ft_3t_printer(NOFOUND, cmd[0], "\n");
 
 	if (cmd)
 		array_free(cmd);

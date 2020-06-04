@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 17:14:08 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/03 17:29:35 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 20:34:19 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char	*get_path(char *com)
 	temp = get_env("PATH=");
 	bin = ft_strsplit(temp, ':');
 	ft_strdel(&temp);
+	
 	while (bin && bin[++i])
 	{
 		path = get_bin(bin[i], com);

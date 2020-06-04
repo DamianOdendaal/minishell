@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 09:26:23 by dodendaa          #+#    #+#             */
-/*   Updated: 2020/06/04 16:43:50 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 20:47:25 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		main(int ac, char **av, char **env)
 		if (ft_strchr(input_data, '"') != NULL)
 			input_data = ft_forgot_quote(input_data, '"');
 
-		// do the check for if someone passes \"
+		
 		else if (ft_strchr(input_data, '\'') != NULL)
 			input_data = ft_forgot_quote(input_data, '\'');
 
@@ -44,13 +44,13 @@ int		main(int ac, char **av, char **env)
 	
 	
 		if (ft_notempty(input_data))
-			{
-				add_history(input_data);
-				commands = ft_strsplit(input_data, ';');
-				free(input_data);
-				loop = ft_exec_args(commands);
-				array_free(commands);
-			}
+		{
+			add_history(input_data);
+			commands = ft_strsplit(input_data, ';');
+			free(input_data);
+			loop = ft_exec_args(commands);
+			array_free(commands);
+		}
 	}
 	array_free(global_env);
 }

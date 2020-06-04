@@ -6,7 +6,7 @@
 /*   By: dodendaa <dodendaa@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 14:56:19 by marvin            #+#    #+#             */
-/*   Updated: 2020/06/04 16:21:46 by dodendaa         ###   ########.fr       */
+/*   Updated: 2020/06/04 20:21:59 by dodendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 
 # define NOTEXIST	("No such file or directory.")
-# define NOTDIR		("Error opening directory.")
+# define NOFOUND	("minishell: command not found: ")
 # define NOPERM		("minishell: permission denied: ")
 # define CANTFORK   ("minishell: unable to fork process:")
 # define EXISTS(x)  (x != '\0')
