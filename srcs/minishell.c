@@ -35,11 +35,14 @@ int		main(int ac, char **av, char **env)
 		else if (ft_strchr(input_data, '\'') != NULL)
 			input_data = ft_forgot_quote(input_data, '\'');
 
-		add_history(input_data);
-		commands = ft_strsplit(input_data, ';');
-		free(input_data);
-		loop = ft_exec_args(commands);
-		array_free(commands);
+		if (ft_notempty(input_data))
+		{
+			add_history(input_data);
+			commands = ft_strsplit(input_data, ';');
+			free(input_data);
+			loop = ft_exec_args(commands);
+			array_free(commands);
+		}
 	}
 	array_free(global_env);
 }
