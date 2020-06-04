@@ -77,6 +77,7 @@ char	*ft_forgot_quote(char *str, char quote);
 void	zsh_level(void);
 int		ft_insert_var(char **temp, char **cmd);
 void	vote_for_pedro(char *left_man, char *right_man, char *middle_man, char *another_man);
+int 	ft_notempty(char *str);
 
 
 #endif
